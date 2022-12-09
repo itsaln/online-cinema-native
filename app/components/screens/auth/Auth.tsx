@@ -3,8 +3,7 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 import { Pressable, Text, View } from 'react-native'
 
 import AuthFields from '@/components/screens/auth/AuthFields'
-import { Button, Loader } from '@/components/ui'
-import DismissKeyboard from '@/components/ui/form-elements/field/DismissKeyboard'
+import { Button, DismissKeyboard, Loader } from '@/components/ui'
 
 import { IAuthFormData } from '@/shared/types/auth.interface'
 
