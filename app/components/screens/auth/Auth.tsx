@@ -2,7 +2,7 @@ import { FC, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { Pressable, Text, View } from 'react-native'
 
-import AuthFields from '@/components/screens/auth/AuthFields'
+import { AuthFields } from '@/components/screens'
 import { Button, DismissKeyboard, Loader } from '@/components/ui'
 
 import { IAuthFormData } from '@/shared/types/auth.interface'

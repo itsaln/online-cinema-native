@@ -1,12 +1,12 @@
 import { FC } from 'react'
 import { Text, View } from 'react-native'
 
-const Admin: FC = () => {
+const Trending: FC = () => {
 	return (
 		<View>
-			<Text>Admin</Text>
+			<Text>Trending</Text>
 		</View>
 	)
 }
 
-export default Admin
+export default Trending

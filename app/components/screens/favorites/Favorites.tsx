@@ -1,12 +1,12 @@
 import { FC } from 'react'
 import { Text, View } from 'react-native'
 
-const Admin: FC = () => {
+const Favorites: FC = () => {
 	return (
 		<View>
-			<Text>Admin</Text>
+			<Text>Favorites</Text>
 		</View>
 	)
 }
 
-export default Admin
+export default Favorites
