@@ -1,13 +1,15 @@
-import { Auth, Favorites, Home, Profile, Search, Trending } from '@/components/screens'
+import {
+	Favorites,
+	Home,
+	Profile,
+	Search,
+	Trending
+} from '@/components/screens'
 
 import { adminRoutes } from '@/navigation/admin.routes'
 import { IRoute } from '@/navigation/navigation.types'
 
 export const userRoutes: IRoute[] = [
-	{
-		name: 'Auth',
-		component: Auth
-	},
 	{
 		name: 'Home',
 		component: Home
