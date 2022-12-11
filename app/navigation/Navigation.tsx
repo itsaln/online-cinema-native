@@ -8,6 +8,8 @@ import { BottomMenu } from '@/components/ui'
 
 import { useAuth } from '@/hooks/useAuth'
 
+import { useCheckAuth } from '@/providers/auth/useCheckAuth'
+
 import PrivateNavigator from '@/navigation/PrivateNavigator'
 
 const Navigation: FC = () => {
@@ -29,6 +31,8 @@ const Navigation: FC = () => {
 			navRef.removeListener('state', listener)
 		}
 	}, [])
+
+	useCheckAuth(currentRoute)
 
 	return (
 		<>
