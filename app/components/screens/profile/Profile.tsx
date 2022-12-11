@@ -2,6 +2,7 @@ import { AntDesign } from '@expo/vector-icons'
 import { FC } from 'react'
 import { useForm } from 'react-hook-form'
 import { Image, Pressable, Text, View } from 'react-native'
+import Animated from 'react-native-reanimated'
 
 import { AuthFields } from '@/components/screens'
 import { useProfile } from '@/components/screens/profile/useProfile'
@@ -9,6 +10,7 @@ import { Button, Loader } from '@/components/ui'
 import Heading from '@/components/ui/heading/Heading'
 
 import { useAuth } from '@/hooks/useAuth'
+import { useScaleOnMount } from '@/hooks/useScaleOnMount'
 
 import { AuthService } from '@/services/auth/auth.service'
 
@@ -23,14 +25,21 @@ const Profile: FC = () => {
 
 	const { isLoading, onSubmit } = useProfile(setValue)
 
+	const { styleAnimation } = useScaleOnMount()
+
 	return (
 		<View className='mt-20 px-10'>
 			<Heading title='Profile' />
 
-			<Image
-				style={{ width: 164, height: 164 }}
-				source={require('@/assets/avatar-guest.jpg')}
-			/>
+			<Animated.View
+				style={styleAnimation}
+				className='my-6 items-center justify-center'
+			>
+				<Image
+					source={require('@/assets/avatar-guest.jpg')}
+					className='w-40 h-40 rounded-2xl'
+				/>
+			</Animated.View>
 
 			{isLoading ? (
 				<Loader />
