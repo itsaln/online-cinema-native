@@ -1,43 +1,48 @@
 import { AntDesign } from '@expo/vector-icons'
-import { deleteItemAsync, getItemAsync } from 'expo-secure-store'
 import { FC } from 'react'
-import { Pressable, Text, View } from 'react-native'
+import { useForm } from 'react-hook-form'
+import { Image, Pressable, Text, View } from 'react-native'
+
+import { AuthFields } from '@/components/screens'
+import { useProfile } from '@/components/screens/profile/useProfile'
+import { Button, Loader } from '@/components/ui'
+import Heading from '@/components/ui/heading/Heading'
 
 import { useAuth } from '@/hooks/useAuth'
 
 import { AuthService } from '@/services/auth/auth.service'
 
-import { EnumSecureStore } from '@/shared/types/auth.interface'
+import { IAuthFormData } from '@/shared/types/auth.interface'
 
 const Profile: FC = () => {
 	const { setUser } = useAuth()
 
+	const { handleSubmit, setValue, control } = useForm<IAuthFormData>({
+		mode: 'onChange'
+	})
+
+	const { isLoading, onSubmit } = useProfile(setValue)
+
 	return (
 		<View className='mt-20 px-10'>
-			<Pressable onPress={() => deleteItemAsync(EnumSecureStore.ACCESS_TOKEN)}>
-				<Text className='text-white'>Clear accessToken</Text>
-			</Pressable>
-			<Pressable onPress={() => deleteItemAsync(EnumSecureStore.REFRESH_TOKEN)}>
-				<Text className='text-white'>Clear refreshToken</Text>
-			</Pressable>
-			<Pressable
-				onPress={() =>
-					getItemAsync(EnumSecureStore.ACCESS_TOKEN).then((data) =>
-						console.log(data)
-					)
-				}
-			>
-				<Text className='text-white'>Show accessToken</Text>
-			</Pressable>
-			<Pressable
-				onPress={() =>
-					getItemAsync(EnumSecureStore.REFRESH_TOKEN).then((data) =>
-						console.log(data)
-					)
-				}
-			>
-				<Text className='text-white'>Show refreshToken</Text>
-			</Pressable>
+			<Heading title='Profile' />
+
+			<Image
+				style={{ width: 164, height: 164 }}
+				source={require('@/assets/avatar-guest.jpg')}
+			/>
+
+			{isLoading ? (
+				<Loader />
+			) : (
+				<View className='mb-10'>
+					<AuthFields control={control} />
+
+					<Button onPress={handleSubmit(onSubmit)} icon={'edit'}>
+						Update profile
+					</Button>
+				</View>
+			)}
 
 			<Pressable
 				onPress={() => AuthService.logout().then(() => setUser(null))}
@@ -46,6 +51,31 @@ const Profile: FC = () => {
 				<AntDesign name={'logout'} size={18} color='white' />
 				<Text className='text-white text-lg ml-2'>Logout</Text>
 			</Pressable>
+
+			{/*<Pressable onPress={() => deleteItemAsync(EnumSecureStore.ACCESS_TOKEN)}>*/}
+			{/*	<Text className='text-white'>Clear accessToken</Text>*/}
+			{/*</Pressable>*/}
+			{/*<Pressable onPress={() => deleteItemAsync(EnumSecureStore.REFRESH_TOKEN)}>*/}
+			{/*	<Text className='text-white'>Clear refreshToken</Text>*/}
+			{/*</Pressable>*/}
+			{/*<Pressable*/}
+			{/*	onPress={() =>*/}
+			{/*		getItemAsync(EnumSecureStore.ACCESS_TOKEN).then((data) =>*/}
+			{/*			console.log(data)*/}
+			{/*		)*/}
+			{/*	}*/}
+			{/*>*/}
+			{/*	<Text className='text-white'>Show accessToken</Text>*/}
+			{/*</Pressable>*/}
+			{/*<Pressable*/}
+			{/*	onPress={() =>*/}
+			{/*		getItemAsync(EnumSecureStore.REFRESH_TOKEN).then((data) =>*/}
+			{/*			console.log(data)*/}
+			{/*		)*/}
+			{/*	}*/}
+			{/*>*/}
+			{/*	<Text className='text-white'>Show refreshToken</Text>*/}
+			{/*</Pressable>*/}
 		</View>
 	)
 }
