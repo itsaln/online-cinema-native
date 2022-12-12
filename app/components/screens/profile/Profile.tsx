@@ -28,7 +28,7 @@ const Profile: FC = () => {
 	const { styleAnimation } = useScaleOnMount()
 
 	return (
-		<Layout className='mt-20 px-10'>
+		<Layout isHasPadding>
 			<Heading title='Profile' />
 
 			<Animated.View
