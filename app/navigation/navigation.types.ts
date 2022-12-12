@@ -8,6 +8,12 @@ export type TypeRootStackParamList = {
 	Trending: undefined
 	Search: undefined
 	Screen404: undefined
+	Movie: {
+		slug: string
+	}
+	Genre: {
+		slug: string
+	}
 } & TypeRootStackAdminList
 
 type TypeRootStackAdminList = {

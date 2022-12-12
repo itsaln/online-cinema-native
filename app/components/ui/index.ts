@@ -9,3 +9,6 @@ export { default as MenuItem } from './layout/bottom-menu/MenuItem'
 
 export { default as Field } from './form-elements/field/Field'
 export { default as DismissKeyboard } from './form-elements/field/DismissKeyboard'
+
+export { default as Rating } from './movie/movie-item/Rating'
+export { default as GenreList } from './movie/movie-item/GenreList'
