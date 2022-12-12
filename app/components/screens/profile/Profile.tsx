@@ -6,7 +6,7 @@ import Animated from 'react-native-reanimated'
 
 import { AuthFields } from '@/components/screens'
 import { useProfile } from '@/components/screens/profile/useProfile'
-import { Button, Loader } from '@/components/ui'
+import { Button, Layout, Loader } from '@/components/ui'
 import Heading from '@/components/ui/heading/Heading'
 
 import { useAuth } from '@/hooks/useAuth'
@@ -28,7 +28,7 @@ const Profile: FC = () => {
 	const { styleAnimation } = useScaleOnMount()
 
 	return (
-		<View className='mt-20 px-10'>
+		<Layout className='mt-20 px-10'>
 			<Heading title='Profile' />
 
 			<Animated.View
@@ -85,7 +85,7 @@ const Profile: FC = () => {
 			{/*>*/}
 			{/*	<Text className='text-white'>Show refreshToken</Text>*/}
 			{/*</Pressable>*/}
-		</View>
+		</Layout>
 	)
 }
 

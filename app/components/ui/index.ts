@@ -3,6 +3,7 @@ export { default as Toast } from './Toast'
 export { default as Button } from './button/Button'
 export { default as Heading } from './heading/Heading'
 
+export { default as Layout } from './layout/Layout'
 export { default as BottomMenu } from './layout/bottom-menu/BottomMenu'
 export { default as MenuItem } from './layout/bottom-menu/MenuItem'
 
