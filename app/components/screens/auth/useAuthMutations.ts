@@ -8,7 +8,7 @@ import { AuthService } from '@/services/auth/auth.service'
 
 import { IAuthFormData } from '@/shared/types/auth.interface'
 
-export const useAuthMutation = (reset: UseFormReset<IAuthFormData>) => {
+export const useAuthMutations = (reset: UseFormReset<IAuthFormData>) => {
 	const { setUser } = useAuth()
 
 	const { mutate: loginSync, isLoading: isLoginLoading } = useMutation(
@@ -31,7 +31,7 @@ export const useAuthMutation = (reset: UseFormReset<IAuthFormData>) => {
 			AuthService.main('reg', email, password),
 		{
 			onSuccess(data) {
-				setTimeout(() => { // TODO: need to check without setTime
+				setTimeout(() => { // TODO: need to check without setTimeout
 					reset()
 					setUser(data.user)
 				}, 0)

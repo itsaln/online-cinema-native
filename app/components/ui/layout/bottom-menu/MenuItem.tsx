@@ -4,7 +4,7 @@ import { Pressable } from 'react-native'
 
 import { getColor } from '@/config/colors.config'
 
-import { IMenuItem, TypeNavigate } from './menu.interface'
+import type { IMenuItem, TypeNavigate } from './menu.interface'
 
 interface IMenuItemProps {
 	item: IMenuItem
@@ -12,7 +12,7 @@ interface IMenuItemProps {
 	currentRoute?: string
 }
 
-const MenuItem: FC<IMenuItemProps> = ({ item, nav, currentRoute }) => {
+const MenuItem: FC<IMenuItemProps> = ({ currentRoute, item, nav }) => {
 	const isActive = currentRoute === item.path
 
 	return (

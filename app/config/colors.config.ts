@@ -1,7 +1,7 @@
 const colorConfig = {
-	primary: '#bf3335',
+	primary: '#BF3335',
 	'gray.400': '#626262',
-	yellow: '#bfc903'
+	yellow: '#FBC903'
 }
 
 export const getColor = (color: keyof typeof colorConfig) => colorConfig[color]

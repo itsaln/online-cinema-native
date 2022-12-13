@@ -31,5 +31,5 @@ export const useFavoriteAnimation = (isSmashed: boolean) => {
 		opacity: liked.value
 	}))
 
-	return { liked, outlineStyle, fillStyle }
+	return { liked, fillStyle, outlineStyle }
 }

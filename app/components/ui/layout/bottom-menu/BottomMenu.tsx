@@ -2,7 +2,7 @@ import { FC } from 'react'
 import { View } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
-import { MenuItem } from '@/components/ui'
+import MenuItem from '@/components/ui/layout/bottom-menu/MenuItem'
 import { menuItems } from '@/components/ui/layout/bottom-menu/menu.data'
 
 import { TypeNavigate } from './menu.interface'

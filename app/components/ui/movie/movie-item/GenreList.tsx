@@ -16,7 +16,7 @@ const GenreList: FC<{ genres: IGenre[] }> = ({ genres }) => {
 					key={genre._id}
 					className='rounded-2xl bg-gray py-1.5 px-3'
 				>
-					<Text>{genre.name}</Text>
+					<Text className='text-white'>{genre.name}</Text>
 				</Pressable>
 			))}
 		</View>

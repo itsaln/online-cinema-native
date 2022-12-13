@@ -8,7 +8,6 @@ const Field = <T extends Record<string, any>>({
 	control,
 	rules,
 	name,
-	className,
 	...rest
 }: IField<T>): JSX.Element => {
 	return (

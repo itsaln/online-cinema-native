@@ -10,7 +10,8 @@ const BlurButton: FC<PropsWithChildren<IBlurButton>> = ({
 	children,
 	color = '#fff',
 	iconSize = 21,
-	className,
+	style,
+	isSmall = false,
 	icon,
 	...rest
 }) => {
@@ -20,9 +21,10 @@ const BlurButton: FC<PropsWithChildren<IBlurButton>> = ({
 				intensity={22}
 				tint='light'
 				className={cn(
-					'w-12 h-12 items-center justify-center rounded-2xl overflow-hidden',
-					className
+					'items-center justify-center overflow-hidden',
+					isSmall ? 'w-8 h-8 rounded-lg' : 'w-12 h-12 rounded-2xl'
 				)}
+				style={style}
 			>
 				{children ? (
 					children

@@ -1,12 +1,11 @@
 import { MaterialCommunityIcons } from '@expo/vector-icons'
-import cn from 'clsx'
 import { FC } from 'react'
 import { StyleSheet } from 'react-native'
 import Animated, { withSpring } from 'react-native-reanimated'
 
-import { BlurButton } from '@/components/ui'
-import { useFavorite } from '@/components/ui/movie/movie-item/favorite-button/useFavorite'
+import BlurButton from '@/components/ui/blur-button/BlurButton'
 
+import { useFavorite } from './useFavorite'
 import { useFavoriteAnimation } from './useFavoriteAnimation'
 
 interface IFavoriteButton {
@@ -14,15 +13,13 @@ interface IFavoriteButton {
 	isSmall?: boolean
 }
 
-const FavoriteButton: FC<IFavoriteButton> = ({ movieId, isSmall }) => {
+const FavoriteButton: FC<IFavoriteButton> = ({ isSmall = false, movieId }) => {
 	const { isSmashed, toggleFavorite } = useFavorite(movieId)
-	const { liked, fillStyle, outlineStyle } = useFavoriteAnimation(isSmashed)
+	const { outlineStyle, fillStyle, liked } = useFavoriteAnimation(isSmashed)
 
 	return (
 		<BlurButton
-			className={cn({
-				'w-8 h-8 rounded-lg': isSmall
-			})}
+			isSmall={isSmall}
 			onPress={() => {
 				liked.value = withSpring(liked.value === 1 ? 0 : 1)
 				toggleFavorite()
@@ -43,7 +40,7 @@ const FavoriteButton: FC<IFavoriteButton> = ({ movieId, isSmall }) => {
 				<MaterialCommunityIcons
 					name={'heart'}
 					size={isSmall ? 19 : 22}
-					color={'#dc3f41'}
+					color={'#DC3F41'}
 				/>
 			</Animated.View>
 		</BlurButton>

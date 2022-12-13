@@ -2,9 +2,11 @@ import { FC, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { Pressable, Text, View } from 'react-native'
 
-import { AuthFields } from '@/components/screens'
-import { useAuthMutation } from '@/components/screens/auth/useAuthMutation'
-import { Button, DismissKeyboard, Loader } from '@/components/ui'
+import AuthFields from '@/components/screens/auth/AuthFields'
+import { useAuthMutations } from '@/components/screens/auth/useAuthMutations'
+import Loader from '@/components/ui/Loader'
+import Button from '@/components/ui/button/Button'
+import DismissKeyboard from '@/components/ui/form-elements/field/DismissKeyboard'
 
 import { IAuthFormData } from '@/shared/types/auth.interface'
 
@@ -15,7 +17,7 @@ const Auth: FC = () => {
 		mode: 'onChange'
 	})
 
-	const { isLoading, registerSync, loginSync } = useAuthMutation(reset)
+	const { isLoading, registerSync, loginSync } = useAuthMutations(reset)
 
 	const onSubmit: SubmitHandler<IAuthFormData> = (data) => {
 		if (isReg) registerSync(data)

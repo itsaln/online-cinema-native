@@ -1,5 +1,5 @@
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import { deleteItemAsync, getItemAsync, setItemAsync } from 'expo-secure-store'
-import { AsyncStorage } from 'react-native'
 
 import {
 	EnumAsyncStorage,

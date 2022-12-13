@@ -4,10 +4,11 @@ import { useForm } from 'react-hook-form'
 import { Image, Pressable, Text, View } from 'react-native'
 import Animated from 'react-native-reanimated'
 
-import { AuthFields } from '@/components/screens'
-import { useProfile } from '@/components/screens/profile/useProfile'
-import { Button, Layout, Loader } from '@/components/ui'
+import AuthFields from '@/components/screens/auth/AuthFields'
+import Loader from '@/components/ui/Loader'
+import Button from '@/components/ui/button/Button'
 import Heading from '@/components/ui/heading/Heading'
+import Layout from '@/components/ui/layout/Layout'
 
 import { useAuth } from '@/hooks/useAuth'
 import { useScaleOnMount } from '@/hooks/useScaleOnMount'
@@ -15,6 +16,8 @@ import { useScaleOnMount } from '@/hooks/useScaleOnMount'
 import { AuthService } from '@/services/auth/auth.service'
 
 import { IAuthFormData } from '@/shared/types/auth.interface'
+
+import { useProfile } from './useProfile'
 
 const Profile: FC = () => {
 	const { setUser } = useAuth()
@@ -61,30 +64,30 @@ const Profile: FC = () => {
 				<Text className='text-white text-lg ml-2'>Logout</Text>
 			</Pressable>
 
-			{/*<Pressable onPress={() => deleteItemAsync(EnumSecureStore.ACCESS_TOKEN)}>*/}
-			{/*	<Text className='text-white'>Clear accessToken</Text>*/}
-			{/*</Pressable>*/}
-			{/*<Pressable onPress={() => deleteItemAsync(EnumSecureStore.REFRESH_TOKEN)}>*/}
-			{/*	<Text className='text-white'>Clear refreshToken</Text>*/}
-			{/*</Pressable>*/}
-			{/*<Pressable*/}
-			{/*	onPress={() =>*/}
-			{/*		getItemAsync(EnumSecureStore.ACCESS_TOKEN).then((data) =>*/}
-			{/*			console.log(data)*/}
-			{/*		)*/}
-			{/*	}*/}
-			{/*>*/}
-			{/*	<Text className='text-white'>Show accessToken</Text>*/}
-			{/*</Pressable>*/}
-			{/*<Pressable*/}
-			{/*	onPress={() =>*/}
-			{/*		getItemAsync(EnumSecureStore.REFRESH_TOKEN).then((data) =>*/}
-			{/*			console.log(data)*/}
-			{/*		)*/}
-			{/*	}*/}
-			{/*>*/}
-			{/*	<Text className='text-white'>Show refreshToken</Text>*/}
-			{/*</Pressable>*/}
+			{/*<Pressable onPress={() => deleteItemAsync(EnumSecureStore.ACCESS_TOKEN)}>
+				<Text className='text-white'>Clear accessToken</Text>
+			</Pressable>
+			<Pressable onPress={() => deleteItemAsync(EnumSecureStore.REFRESH_TOKEN)}>
+				<Text className='text-white'>Clear refreshToken</Text>
+			</Pressable>
+			<Pressable
+				onPress={() =>
+					getItemAsync(EnumSecureStore.ACCESS_TOKEN).then(data =>
+						console.log(data)
+					)
+				}
+			>
+				<Text className='text-white'>Show accessToken</Text>
+			</Pressable>
+			<Pressable
+				onPress={() =>
+					getItemAsync(EnumSecureStore.REFRESH_TOKEN).then(data =>
+						console.log(data)
+					)
+				}
+			>
+				<Text className='text-white'>Show refreshToken</Text>
+			</Pressable>*/}
 		</Layout>
 	)
 }

@@ -29,5 +29,5 @@ export const useItemAnimation = (index: number, scrollX: Animated.Value) => {
 		outputRange: [0, 1, 0]
 	})
 
-	return { rotate, scale, opacity, opacityElements }
+	return { rotate, opacity, scale, opacityElements }
 }

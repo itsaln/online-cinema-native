@@ -4,7 +4,7 @@ import { Text } from 'react-native'
 
 import { IHeading } from './heading.interface'
 
-const Heading: FC<IHeading> = ({ title, className }) => {
+const Heading: FC<IHeading> = ({ className, title }) => {
 	return (
 		<Text
 			className={cn(

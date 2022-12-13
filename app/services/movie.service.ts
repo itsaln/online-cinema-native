@@ -39,7 +39,7 @@ export const MovieService = {
 	},
 
 	async getByActor(actorId: string) {
-		return request<IMovie>({
+		return request<IMovie[]>({
 			url: getMoviesUrl(`/by-actor/${actorId}`),
 			method: 'GET'
 		})

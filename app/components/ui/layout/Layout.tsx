@@ -1,10 +1,11 @@
 import cn from 'clsx'
 import { FC, PropsWithChildren } from 'react'
-import { SafeAreaView, StyleProp, Text, View, ViewStyle } from 'react-native'
+import { Platform, SafeAreaView, View, ViewStyle } from 'react-native'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 interface ILayout {
 	className?: string
-	style?: StyleProp<ViewStyle>
+	style?: ViewStyle
 	isHasPadding?: boolean
 }
 
@@ -14,13 +15,18 @@ const Layout: FC<PropsWithChildren<ILayout>> = ({
 	className,
 	isHasPadding
 }) => {
+	const { top } = useSafeAreaInsets()
+
 	return (
 		<SafeAreaView className='flex-1'>
 			<View
-				className={cn('pt-5 flex-1', className, {
+				className={cn('flex-1', className, {
 					'px-6': isHasPadding
 				})}
-				style={style}
+				style={{
+					paddingTop: Platform.OS === 'ios' ? top / 6 : top * 1.7,
+					...style
+				}}
 			>
 				{children}
 			</View>

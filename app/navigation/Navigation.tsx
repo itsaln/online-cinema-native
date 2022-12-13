@@ -4,16 +4,17 @@ import {
 } from '@react-navigation/native'
 import { FC, useEffect, useState } from 'react'
 
-import { BottomMenu } from '@/components/ui'
+import BottomMenu from '@/components/ui/layout/bottom-menu/BottomMenu'
 
 import { useAuth } from '@/hooks/useAuth'
 
 import { useCheckAuth } from '@/providers/auth/useCheckAuth'
 
-import PrivateNavigator from '@/navigation/PrivateNavigator'
+import PrivateNavigator from './PrivateNavigator'
 
 const Navigation: FC = () => {
 	const { user } = useAuth()
+
 	const [currentRoute, setCurrentRoute] = useState<string | undefined>(
 		undefined
 	)

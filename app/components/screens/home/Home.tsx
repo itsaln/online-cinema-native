@@ -1,7 +1,8 @@
 import { FC } from 'react'
 
 import Carousel from '@/components/screens/home/carousel/Carousel'
-import { Layout, Loader } from '@/components/ui'
+import Loader from '@/components/ui/Loader'
+import Layout from '@/components/ui/layout/Layout'
 
 import { useGetAllMovies } from './useGetAllMovies'
 

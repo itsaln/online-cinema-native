@@ -5,3 +5,5 @@ export interface IUser {
 	createdAt: string
 	isAdmin: boolean
 }
+
+export interface IUserEditInput extends Omit<IUser, '_id' | 'createdAt'> {}

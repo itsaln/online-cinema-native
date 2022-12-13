@@ -17,7 +17,7 @@ const Toast: FC = () => {
 		<RnToast
 			topOffset={50}
 			config={{
-				success: (props) => <BaseToast {...props} {...options('#67e769')} />,
+				success: (props) => <BaseToast {...props} {...options('#67E769')} />,
 				info: (props) => <BaseToast {...props} {...options('#65d4ff')} />,
 				error: (props) => <BaseToast {...props} {...options('#ff4949')} />
 			}}

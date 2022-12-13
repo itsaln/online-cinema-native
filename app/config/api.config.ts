@@ -1,4 +1,4 @@
-export const SERVER_URL = process.env.SERVER_URL
+export const SERVER_URL = 'http://192.168.1.105:5000'
 export const API_URL = `${SERVER_URL}/api`
 
 export const getAuthUrl = (string: string) => `/auth${string}`

@@ -4,7 +4,7 @@ import { LinearGradient } from 'expo-linear-gradient'
 import { FC, PropsWithChildren } from 'react'
 import { Pressable, Text } from 'react-native'
 
-import { IButton } from '@/components/ui/button/button.interface'
+import { IButton } from './button.interface'
 
 const Button: FC<PropsWithChildren<IButton>> = ({
 	className,
@@ -20,9 +20,9 @@ const Button: FC<PropsWithChildren<IButton>> = ({
 				className={cn('w-full py-3 px-8 rounded-2xl items-center', {
 					'flex-row': !!icon
 				})}
-				colors={['#dc3f41', '#a6282b']}
+				colors={['#DC3F41', '#a6282b']}
 			>
-				{icon && <Feather name={icon} size={18} color='#fff' />}
+				{icon && <Feather name={icon} size={18} color='white' />}
 				<Text
 					className={cn('text-white text-center font-medium text-lg', {
 						'ml-2': !!icon

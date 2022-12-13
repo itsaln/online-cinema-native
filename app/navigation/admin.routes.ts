@@ -1,6 +1,6 @@
-import { Admin } from '@/components/screens'
+import Admin from '@/components/screens/admin/home/Admin'
 
-import { IRoute } from '@/navigation/navigation.types'
+import { IRoute } from './navigation.types'
 
 export const adminRoutes: IRoute[] = [
 	{

@@ -1,15 +1,19 @@
 import { FC } from 'react'
 import { Animated, Image, Pressable, Text, View } from 'react-native'
 
-import { FavoriteButton, GenreList, Rating } from '@/components/ui'
+import {
+	ITEM_SIZE,
+	SPACING
+} from '@/components/screens/home/carousel/carousel.constants'
+import GenreList from '@/components/ui/movie/movie-item/GenreList'
+import Rating from '@/components/ui/movie/movie-item/Rating'
+import FavoriteButton from '@/components/ui/movie/movie-item/favorite-button/FavoriteButton'
 
 import { useTypedNavigation } from '@/hooks/useTypedNavigation'
 
 import { IMovie } from '@/shared/types/movie.interface'
 
 import { getMediaSource } from '@/utils/getMediaSource'
-
-import { ITEM_SIZE, SPACING } from '../carousel.constants'
 
 import { useItemAnimation } from './useItemAnimation'
 
@@ -22,13 +26,17 @@ interface ICarouselItem {
 const CarouselItem: FC<ICarouselItem> = ({ movie, index, scrollX }) => {
 	const { navigate } = useTypedNavigation()
 
-	const { rotate, scale, opacity, opacityElements } = useItemAnimation(
+	const { rotate, opacity, scale, opacityElements } = useItemAnimation(
 		index,
 		scrollX
 	)
 
 	return (
-		<View style={{ width: ITEM_SIZE }}>
+		<View
+			style={{
+				width: ITEM_SIZE
+			}}
+		>
 			<Animated.View
 				style={{
 					padding: SPACING,
