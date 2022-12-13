@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { Animated, Image, Pressable, Text, View } from 'react-native'
 
-import { GenreList, Rating } from '@/components/ui'
+import { FavoriteButton, GenreList, Rating } from '@/components/ui'
 
 import { useTypedNavigation } from '@/hooks/useTypedNavigation'
 
@@ -22,8 +22,10 @@ interface ICarouselItem {
 const CarouselItem: FC<ICarouselItem> = ({ movie, index, scrollX }) => {
 	const { navigate } = useTypedNavigation()
 
-	const { rotate, scale, opacity, opacityElements } =
-		useItemAnimation(index, scrollX)
+	const { rotate, scale, opacity, opacityElements } = useItemAnimation(
+		index,
+		scrollX
+	)
 
 	return (
 		<View style={{ width: ITEM_SIZE }}>
@@ -40,7 +42,7 @@ const CarouselItem: FC<ICarouselItem> = ({ movie, index, scrollX }) => {
 					onPress={() => navigate('Movie', { slug: movie.slug })}
 				>
 					<View className='absolute z-1 right-2 top-2'>
-						{/*	Favorite button */}
+						<FavoriteButton movieId={movie._id} />
 					</View>
 					<Image
 						style={{
