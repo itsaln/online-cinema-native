@@ -8,7 +8,7 @@ export const useFavorites = () => {
 	const { user } = useAuth()
 
 	const { isLoading, data: favoriteMovies } = useQuery(
-		['favorite movies'],
+		['get favorite movies'],
 		() => UserService.getFavorites(),
 		{
 			enabled: !!user
