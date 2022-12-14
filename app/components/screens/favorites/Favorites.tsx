@@ -1,28 +1,19 @@
 import { FC } from 'react'
-import { View } from 'react-native'
 
-import { useFavorites } from '@/components/screens/favorites/useFavorites'
 import Loader from '@/components/ui/Loader'
-import Heading from '@/components/ui/heading/Heading'
 import Layout from '@/components/ui/layout/Layout'
-import MovieItem from '@/components/ui/movie/movie-item/MovieItem'
+import MovieCatalog from '@/components/ui/movie/catalog/MovieCatalog'
+
+import { useFavorites } from './useFavorites'
 
 const Favorites: FC = () => {
 	const { isLoading, favoriteMovies } = useFavorites()
 
+	if (isLoading) return <Loader />
+
 	return (
 		<Layout isHasPadding>
-			<Heading title='Favorites' />
-
-			<View className=''>
-				{isLoading ? (
-					<Loader />
-				) : (
-					favoriteMovies?.map((movie) => (
-						<MovieItem key={movie._id} movie={movie} />
-					))
-				)}
-			</View>
+			<MovieCatalog title='Favorites' movies={favoriteMovies} />
 		</Layout>
 	)
 }

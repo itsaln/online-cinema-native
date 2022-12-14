@@ -22,7 +22,7 @@ const BlurButton: FC<PropsWithChildren<IBlurButton>> = ({
 				tint='light'
 				className={cn(
 					'items-center justify-center overflow-hidden',
-					isSmall ? 'w-8 h-8 rounded-lg' : 'w-12 h-12 rounded-2xl'
+					isSmall ? 'w-9 h-9 rounded-lg' : 'w-12 h-12 rounded-2xl'
 				)}
 				style={style}
 			>
