@@ -3,7 +3,9 @@ import { Text, View } from 'react-native'
 
 import { useTypedNavigation } from '@/hooks/useTypedNavigation'
 
-const MovieItem: FC = () => {
+import { IMovie } from '@/shared/types/movie.interface'
+
+const MovieItem: FC<{ movie: IMovie }> = ({ movie }) => {
 	const { navigate } = useTypedNavigation()
 
 	return (
