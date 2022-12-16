@@ -1,7 +1,5 @@
-import { ImageSourcePropType } from 'react-native'
-
 import { SERVER_URL } from '@/config/api.config'
 
-export const getMediaSource = (path: string): ImageSourcePropType => ({
+export const getMediaSource = (path: string) => ({
 	uri: SERVER_URL + path
 })
