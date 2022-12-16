@@ -1,21 +1,5 @@
-import { Omit } from 'react-native'
-
-export interface IGenre {
-	_id: string
-	name: string
-	slug: string
-	description: string
-}
-
-export interface IGenreEditInput extends Omit<IGenre, '_id'> {}
-
-export interface IActor {
-	_id: string
-	photo: string
-	name: string
-	countMovies: number
-	slug: string
-}
+import { IActor } from './actor.interface'
+import { IGenre } from './genre.interface'
 
 export interface IParameters {
 	year: number
