@@ -1,5 +1,5 @@
-import { FC } from 'react'
-import { Text, View } from 'react-native'
+import { FC, useRef } from 'react'
+import { Animated, Text, View } from 'react-native'
 
 import MovieBackground from '@/components/screens/movie/MovieBackground'
 import MovieHeader from '@/components/screens/movie/MovieHeader'
@@ -10,15 +10,17 @@ import Layout from '@/components/ui/layout/Layout'
 
 //  [x] - Header
 //  [x] - Info
-//  [] - Background
-//  [] - MovieContent
-//  [] - Actor carousel
-//  [] - Related movies
-//  [] - Animation
+//  [x] - Background
+//  [x] - MovieContent
+//  [x] - Actor carousel
+//  [x] - Related movies
+//  [x] - Animation
 //  [] - Video player
 //  [] - useCountOpened
 
 const Movie: FC = () => {
+	const y = useRef(new Animated.Value(0)).current
+	
 	const { isLoading, movie } = useMovie()
 
 	if (isLoading) return <Loader />
@@ -26,9 +28,9 @@ const Movie: FC = () => {
 
 	return (
 		<Layout style={{ paddingTop: 0 }}>
-			<MovieHeader movie={movie} />
-			<MovieBackground movie={movie} />
-			<MovieContent movie={movie} />
+			<MovieHeader movie={movie} y={y} />
+			<MovieBackground movie={movie} y={y} />
+			<MovieContent movie={movie} y={y} />
 		</Layout>
 	)
 }
