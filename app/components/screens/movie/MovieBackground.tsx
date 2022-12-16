@@ -3,15 +3,11 @@ import { FC } from 'react'
 import { Animated, Image, StyleSheet, Text, View } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
-import { IMovie } from '@/shared/types/movie.interface'
-
 import { getMediaSource } from '@/utils/getMediaSource'
 
-interface IMovieBackground {
-	movie: IMovie
-}
+import { IMovieComponent } from './movie-page.interface'
 
-const MovieBackground: FC<IMovieBackground> = ({ movie }) => {
+const MovieBackground: FC<IMovieComponent> = ({ movie }) => {
 	const { top } = useSafeAreaInsets()
 
 	return (

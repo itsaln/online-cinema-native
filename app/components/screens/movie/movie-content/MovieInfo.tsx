@@ -5,13 +5,9 @@ import { Animated, StyleSheet, Text, View } from 'react-native'
 import GenreList from '@/components/ui/movie/movie-item/GenreList'
 import Rating from '@/components/ui/movie/movie-item/Rating'
 
-import { IMovie } from '@/shared/types/movie.interface'
+import { IMovieComponent } from '../movie-page.interface'
 
-interface IMovieInfo {
-	movie: IMovie
-}
-
-const MovieInfo: FC<IMovieInfo> = ({ movie }) => {
+const MovieInfo: FC<IMovieComponent> = ({ movie }) => {
 	return (
 		<Animated.View className='px-6 mb-3'>
 			<Text
