@@ -6,6 +6,7 @@ import Admin from '@/components/screens/admin/home/Admin'
 import MovieEdit from '@/components/screens/admin/movie/MovieEdit'
 import MovieList from '@/components/screens/admin/movies/MovieList'
 import UserEdit from '@/components/screens/admin/user/UserEdit'
+import UserList from '@/components/screens/admin/users/UsersList'
 
 import { IRoute } from './navigation.types'
 
@@ -48,6 +49,11 @@ export const adminRoutes: IRoute[] = [
 	{
 		name: 'UserEdit',
 		component: UserEdit,
+		isAdmin: true
+	},
+	{
+		name: 'UserList',
+		component: UserList,
 		isAdmin: true
 	}
 ]

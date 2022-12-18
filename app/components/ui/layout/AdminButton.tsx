@@ -2,10 +2,14 @@ import { MaterialIcons } from '@expo/vector-icons'
 import { FC } from 'react'
 import { Pressable } from 'react-native'
 
+import { useAuth } from '@/hooks/useAuth'
 import { useTypedNavigation } from '@/hooks/useTypedNavigation'
 
 const AdminButton: FC = () => {
 	const { navigate } = useTypedNavigation()
+	const { user } = useAuth()
+
+	if (!user?.isAdmin) return null
 
 	return (
 		<Pressable
