@@ -18,7 +18,10 @@ const MovieHeader: FC<IMovieComponent> = ({ movie, y }) => {
 	return (
 		<View
 			className='absolute left-0 top-0 w-full z-1 flex-row justify-between items-center px-6 pb-4'
-			style={{ marginTop: -top, paddingTop: Platform.OS === 'ios' ? top + 6 : top + 35 }}
+			style={{
+				marginTop: -top,
+				paddingTop: Platform.OS === 'ios' ? top + 6 : top + 66
+			}}
 		>
 			<Animated.View
 				style={{

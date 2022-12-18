@@ -65,3 +65,4 @@ web-build/
 
 # Custom
 /design
+.env

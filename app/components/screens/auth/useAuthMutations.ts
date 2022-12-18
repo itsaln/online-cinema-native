@@ -17,10 +17,10 @@ export const useAuthMutations = (reset: UseFormReset<IAuthFormData>) => {
 			AuthService.main('login', email, password),
 		{
 			onSuccess(data) {
-				setTimeout(() => { // TODO: need to check without setTimeout
+				// setTimeout(() => { // TODO: need to check without setTimeout
 					reset()
 					setUser(data.user)
-				}, 0)
+				// }, 0)
 			}
 		}
 	)
@@ -31,10 +31,10 @@ export const useAuthMutations = (reset: UseFormReset<IAuthFormData>) => {
 			AuthService.main('reg', email, password),
 		{
 			onSuccess(data) {
-				setTimeout(() => { // TODO: need to check without setTimeout
+				// setTimeout(() => { // TODO: need to check without setTimeout
 					reset()
 					setUser(data.user)
-				}, 0)
+				// }, 0)
 			}
 		}
 	)

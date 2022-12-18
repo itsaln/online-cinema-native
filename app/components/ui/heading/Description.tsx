@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { Text, View, useWindowDimensions } from 'react-native'
+import { View, useWindowDimensions } from 'react-native'
 import { RenderHTML } from 'react-native-render-html'
 
 const Description: FC<{ text: string }> = ({ text }) => {
@@ -9,6 +9,7 @@ const Description: FC<{ text: string }> = ({ text }) => {
 		body: {
 			color: 'white',
 			fontSize: 17,
+			lineHeight: 23,
 			fontWeight: '300',
 			opacity: 0.5
 		}
@@ -24,7 +25,6 @@ const Description: FC<{ text: string }> = ({ text }) => {
 				// @ts-ignore
 				tagsStyles={tagsStyles}
 			/>
-			<Text>Description</Text>
 		</View>
 	)
 }
