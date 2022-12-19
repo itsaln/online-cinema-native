@@ -5,12 +5,12 @@ export interface ITableItem {
 }
 
 export interface IAdminTableItem {
-	tableItem: IAdminTableItem
+	tableItem: ITableItem
 	removeHandler: () => void
 }
 
 export interface IAdminTable {
-	tableItems: IAdminTableItem[]
+	tableItems?: ITableItem[]
 	isLoading: boolean
 	headerItems: string[]
 	removeHandler: (id: string) => void

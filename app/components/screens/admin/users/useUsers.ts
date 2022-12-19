@@ -17,7 +17,6 @@ export const useUsers = () => {
 		['search users', debouncedSearch],
 		() => UserService.getAll(debouncedSearch),
 		{
-			enabled: !!debouncedSearch,
 			select: (data) =>
 				data.map(
 					(user): ITableItem => ({
