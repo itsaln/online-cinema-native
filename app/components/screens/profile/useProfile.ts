@@ -20,7 +20,7 @@ export const useProfile = (setValue: UseFormSetValue<IAuthFormData>) => {
 			onSuccess() {
 				Toast.show({
 					text1: 'Update profile',
-					text2: 'Update was successful',
+					text2: 'update was successful',
 					type: 'success'
 				})
 			}

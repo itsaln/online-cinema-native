@@ -1,17 +1,17 @@
+import { useIsFocused } from '@react-navigation/native'
 import { BlurView } from 'expo-blur'
 import { FC, useEffect, useState } from 'react'
 import { Text, View } from 'react-native'
 import Animated, { useAnimatedStyle, withSpring } from 'react-native-reanimated'
 
-import AdminNavItem from '@/components/ui/admin-navigation/AdminNavItem'
 import BlurButton from '@/components/ui/blur-button/BlurButton'
 import Heading from '@/components/ui/heading/Heading'
 
 import { useTypedNavigation } from '@/hooks/useTypedNavigation'
 
+import AdminNavItem from './AdminNavItem'
 import { navItems } from './admin-navigation.data'
 import HamburgerAnimation from './hamburger-animation/HamburgerAnimation'
-import { useIsFocused } from '@react-navigation/native'
 
 interface IAdminNavigation {
 	title: string

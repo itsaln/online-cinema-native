@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { ScrollView, Text } from 'react-native'
 
-import AdminNavigation from '@/components/ui/admin-navigation/AdminNavigation'
+import AdminNavigation from '@/components/ui/admin/navigation/AdminNavigation'
 import Layout from '@/components/ui/layout/Layout'
 
 import Statistics from './statistics/Statistics'
