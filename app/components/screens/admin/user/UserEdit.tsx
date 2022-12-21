@@ -35,7 +35,7 @@ const UserEdit: FC = () => {
 
 						<Controller
 							control={control}
-							name='isAdmin'
+							name={'isAdmin'}
 							render={({ field: { onChange, value } }) => (
 								<Pressable
 									onPress={() => onChange(!value)}

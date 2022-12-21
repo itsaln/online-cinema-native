@@ -34,7 +34,7 @@ const GenreEdit: FC = () => {
 					<ScrollView showsVerticalScrollIndicator={false}>
 						<Field<IGenreEditInput>
 							control={control}
-							name='name'
+							name={'name'}
 							placeholder='Enter name'
 							rules={{
 								required: 'Name is required!'
@@ -44,7 +44,7 @@ const GenreEdit: FC = () => {
 						<SlugWrapper generate={() => generateSlug(getValues('name'))}>
 							<Field<IGenreEditInput>
 								control={control}
-								name='slug'
+								name={'slug'}
 								placeholder='Enter slug'
 								rules={{
 									required: 'Slug is required!'
@@ -54,7 +54,7 @@ const GenreEdit: FC = () => {
 
 						<Controller
 							control={control}
-							name='description'
+							name={'description'}
 							defaultValue=''
 							render={({
 								field: { value, onChange },

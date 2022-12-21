@@ -34,7 +34,7 @@ const ActorEdit: FC = () => {
 					<ScrollView showsVerticalScrollIndicator={false}>
 						<Field<IActorEditInput>
 							control={control}
-							name='name'
+							name={'name'}
 							placeholder='Enter name'
 							rules={{
 								required: 'Name is required!'
@@ -44,7 +44,7 @@ const ActorEdit: FC = () => {
 						<SlugWrapper generate={() => generateSlug(getValues('name'))}>
 							<Field<IActorEditInput>
 								control={control}
-								name='slug'
+								name={'slug'}
 								placeholder='Enter slug'
 								rules={{
 									required: 'Slug is required!'
@@ -54,7 +54,7 @@ const ActorEdit: FC = () => {
 
 						<Controller
 							control={control}
-							name='photo'
+							name={'photo'}
 							defaultValue=''
 							render={({
 								field: { value, onChange },
