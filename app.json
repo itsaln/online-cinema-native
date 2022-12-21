@@ -18,16 +18,23 @@
       "**/*"
     ],
     "ios": {
-      "supportsTable": true
+      "supportsTable": true,
+      "bundleIdentifier": "com.itsaln.onlinecinemaapp"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./app/assets/adaptive-icon.png",
         "backgroundColor": "#111111"
-      }
+      },
+      "package": "com.itsaln.onlinecinemaapp"
     },
     "web": {
       "favicon": "./app/assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "03830935-fd94-4774-970f-2cef2e431e91"
+      }
     }
   }
 }
