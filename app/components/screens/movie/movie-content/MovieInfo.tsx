@@ -39,7 +39,7 @@ const MovieInfo: FC<IMovieComponent> = ({ movie, y }) => {
 
 const styles = StyleSheet.create({
 	text: {
-		color: 'white',
+		color: '#fff',
 		marginHorizontal: 4,
 		fontSize: 18
 	}

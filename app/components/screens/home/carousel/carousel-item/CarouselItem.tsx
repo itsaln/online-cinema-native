@@ -57,7 +57,7 @@ const CarouselItem: FC<ICarouselItem> = ({ movie, index, scrollX }) => {
 							height: ITEM_SIZE * 1.3,
 							resizeMode: 'cover',
 							borderWidth: 1,
-							borderColor: 'white'
+							borderColor: '#fff'
 						}}
 						className='w-full rounded-xl mb-2.5'
 						source={getMediaSource(movie.poster)}

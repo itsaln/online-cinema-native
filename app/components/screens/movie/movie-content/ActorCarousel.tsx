@@ -5,7 +5,7 @@ import HorizontalList from '@/components/ui/HorizontalList'
 
 import { useTypedNavigation } from '@/hooks/useTypedNavigation'
 
-import { IActor } from '@/shared/types/movie.interface'
+import { IActor } from '@/shared/types/actor.interface'
 
 import { getMediaSource } from '@/utils/getMediaSource'
 

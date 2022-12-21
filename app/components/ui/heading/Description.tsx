@@ -7,7 +7,7 @@ const Description: FC<{ text: string }> = ({ text }) => {
 
 	const tagsStyles = {
 		body: {
-			color: 'white',
+			color: '#fff',
 			fontSize: 17,
 			lineHeight: 23,
 			fontWeight: '300',
