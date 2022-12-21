@@ -37,7 +37,9 @@ const MovieEdit: FC = () => {
 				{isLoading ? (
 					<Loader />
 				) : (
-					<ScrollView showsVerticalScrollIndicator={false}>
+					<ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{
+						paddingBottom: 100
+					}}>
 						<Field<IMovieEditInput>
 							name={'title'}
 							placeholder='Enter name'
