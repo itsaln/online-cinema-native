@@ -26,6 +26,7 @@ const MovieEdit: FC = () => {
 					<Loader />
 				) : (
 					<>
+						
 						<Button onPress={handleSubmit(onSubmit)} icon={'pen-tool'}>
 							Update
 						</Button>
