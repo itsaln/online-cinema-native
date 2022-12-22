@@ -17,7 +17,7 @@ const AuthFields: FC<IAuthFields> = ({ control, isPassRequired }) => {
 			<Field<IAuthFormData>
 				placeholder='Enter email'
 				control={control}
-				name='email'
+				name={'email'}
 				rules={{
 					required: 'Email is required!',
 					pattern: {
@@ -31,7 +31,7 @@ const AuthFields: FC<IAuthFields> = ({ control, isPassRequired }) => {
 			<Field<IAuthFormData>
 				placeholder='Enter password'
 				control={control}
-				name='password'
+				name={'password'}
 				secureTextEntry
 				rules={
 					isPassRequired

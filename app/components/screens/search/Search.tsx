@@ -21,7 +21,7 @@ const Search: FC = () => {
 				<Field<ISearchFormData>
 					placeholder='Type something...'
 					control={control}
-					name='searchTerm'
+					name={'searchTerm'}
 					keyboardType='web-search'
 				/>
 			</View>

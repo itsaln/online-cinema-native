@@ -32,7 +32,7 @@ const FavoriteButton: FC<IFavoriteButton> = ({ isSmall = false, movieId }) => {
 				<MaterialCommunityIcons
 					name={'heart-outline'}
 					size={isSmall ? 19 : 22}
-					color={'white'}
+					color={'#fff'}
 				/>
 			</Animated.View>
 

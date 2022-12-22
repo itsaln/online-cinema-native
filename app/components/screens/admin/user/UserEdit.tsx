@@ -1,4 +1,4 @@
-import CheckBox from '@react-native-community/checkbox'
+import ExpoCheckBox from 'expo-checkbox'
 import { FC } from 'react'
 import { Control, Controller, useForm } from 'react-hook-form'
 import { Pressable, Text, View } from 'react-native'
@@ -35,13 +35,13 @@ const UserEdit: FC = () => {
 
 						<Controller
 							control={control}
-							name='isAdmin'
+							name={'isAdmin'}
 							render={({ field: { onChange, value } }) => (
 								<Pressable
 									onPress={() => onChange(!value)}
 									className='my-5 w-40'
 								>
-									<CheckBox
+									<ExpoCheckBox
 										value={value}
 										onValueChange={onChange}
 										style={{ alignSelf: 'center' }}
