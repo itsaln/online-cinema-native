@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { Controller, useForm } from 'react-hook-form'
-import { ScrollView, Text, View } from 'react-native'
+import { ScrollView, View } from 'react-native'
 
 import Loader from '@/components/ui/Loader'
 import AdminNavigation from '@/components/ui/admin/navigation/AdminNavigation'

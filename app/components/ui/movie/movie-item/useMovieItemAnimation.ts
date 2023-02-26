@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { ViewStyle } from 'react-native'
 import {
 	Easing,
 	useAnimatedStyle,
@@ -6,7 +7,6 @@ import {
 	withDelay,
 	withTiming
 } from 'react-native-reanimated'
-import { ViewStyle } from 'react-native'
 
 export const useMovieItemAnimation = (index: number, style?: ViewStyle) => {
 	const scale = useSharedValue(0.4)

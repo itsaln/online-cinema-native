@@ -1,7 +1,7 @@
 import { MaterialIcons } from '@expo/vector-icons'
 import cn from 'clsx'
 import { FC } from 'react'
-import { Pressable, Text, View } from 'react-native'
+import { Pressable, Text } from 'react-native'
 
 import { useTypedNavigation } from '@/hooks/useTypedNavigation'
 import { useTypedRoute } from '@/hooks/useTypedRoute'

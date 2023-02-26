@@ -3,7 +3,6 @@ import { FC } from 'react'
 import { Text, View } from 'react-native'
 
 import AdminActions from './AdminActions'
-
 import { IAdminTableItem } from './admin-table.interface'
 
 const AdminTableItem: FC<IAdminTableItem> = ({ tableItem, removeHandler }) => {

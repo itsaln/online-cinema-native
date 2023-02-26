@@ -15,4 +15,3 @@ const HorizontalList = <T extends any>(props: FlatListProps<T>) => {
 }
 
 export default memo(HorizontalList)
-

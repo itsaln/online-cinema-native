@@ -1,7 +1,7 @@
 import { useIsFocused } from '@react-navigation/native'
 import { BlurView } from 'expo-blur'
 import { FC, useEffect, useState } from 'react'
-import { Text, View } from 'react-native'
+import { View } from 'react-native'
 import Animated, { useAnimatedStyle, withSpring } from 'react-native-reanimated'
 
 import BlurButton from '@/components/ui/blur-button/BlurButton'

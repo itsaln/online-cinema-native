@@ -1,6 +1,6 @@
 import { LinearGradient } from 'expo-linear-gradient'
 import { FC } from 'react'
-import { Animated, Image, StyleSheet, Text, View } from 'react-native'
+import { Animated, Image, StyleSheet } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 import { getMediaSource } from '@/utils/getMediaSource'

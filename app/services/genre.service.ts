@@ -2,7 +2,7 @@ import { getGenresUrl } from '@/config/api.config'
 
 import { request } from '@/services/api/request.api'
 
-import { IGenre, IGenreEditInput } from '@/shared/types/movie.interface'
+import { IGenre, IGenreEditInput } from '@/shared/types/genre.interface'
 
 export const GenreService = {
 	async getAll(searchTerm?: string) {
